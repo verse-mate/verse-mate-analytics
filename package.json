@@ -1,0 +1,16 @@
+{
+  "name": "verse-mate-analytics",
+  "version": "1.0.0",
+  "description": "PostHog dashboards, HogQL queries, and analytics tooling for Verse Mate",
+  "scripts": {
+    "setup": "bun posthog/setup.ts",
+    "setup:dry-run": "bun posthog/setup.ts --dry-run",
+    "list-insights": "bun posthog/list-insights.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  }
+}
