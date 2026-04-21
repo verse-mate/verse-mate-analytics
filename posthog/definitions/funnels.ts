@@ -260,6 +260,34 @@ const FEATURE_DEPTH_FUNNEL: FunnelDefinition = {
 };
 
 /**
+ * Audio Engagement Funnel (feat-explanation-audio / TASK-011)
+ *
+ * Tracks how readers progress from opening a chapter to finishing the
+ * audio narration of an explanation. Steps 1-2 measure engagement
+ * intent; 2→3 the reader's commitment to audio; 3→4 the quality /
+ * length fit.
+ */
+const AUDIO_ENGAGEMENT_FUNNEL: FunnelDefinition = {
+  name: 'Funnel - Audio Engagement',
+  description:
+    'Chapter viewed -> explanation opened -> audio started -> audio ' +
+    'completed, within a 30-minute session. Low 2->3 conversion suggests ' +
+    'the inline "Listen" chip is not visible or appealing; low 3->4 ' +
+    'suggests audio length or content is a mismatch.',
+  steps: [
+    { event: 'CHAPTER_VIEWED', name: 'Chapter viewed' },
+    { event: 'EXPLANATION_TAB_CHANGED', name: 'Explanation opened' },
+    { event: 'AUDIO_PLAYBACK_STARTED', name: 'Audio started' },
+    { event: 'AUDIO_PLAYBACK_COMPLETED', name: 'Audio completed' },
+  ],
+  conversionWindow: TIME_WINDOWS.AI_ENGAGEMENT,
+  orderType: 'ordered',
+  vizType: 'steps',
+  dashboards: ['ai-performance'],
+  queryFile: 'funnels/audio-engagement-funnel.sql',
+};
+
+/**
  * All funnel definitions
  */
 export const FUNNEL_DEFINITIONS: FunnelDefinition[] = [
@@ -269,6 +297,7 @@ export const FUNNEL_DEFINITIONS: FunnelDefinition[] = [
   FEATURE_ADOPTION_FUNNEL,
   SHARING_FUNNEL,
   FEATURE_DEPTH_FUNNEL,
+  AUDIO_ENGAGEMENT_FUNNEL,
 ];
 
 /**
