@@ -337,6 +337,24 @@ const AI_PERFORMANCE_INSIGHTS: InsightDefinition[] = [
     dashboards: ['ai-performance'],
     timeWindow: '90d',
   },
+  {
+    name: 'Number - Audio Completion Rate',
+    description:
+      'Audio completion rate: AUDIO_PLAYBACK_COMPLETED / AUDIO_PLAYBACK_STARTED. Spec target ≥ 40%. Below 30% suggests audio length or content mismatch.',
+    queryFile: 'ai-performance/audio-completion-rate.sql',
+    visualizationType: 'Number',
+    dashboards: ['ai-performance'],
+    timeWindow: '7d',
+  },
+  {
+    name: 'Number - Audio Generation Failure Rate',
+    description:
+      'Audio generation failure rate: AUDIO_GENERATION_FAILED / total TTS jobs. Spec target < 1%. Anything above 2% should page the on-call engineer.',
+    queryFile: 'ai-performance/audio-generation-failure-rate.sql',
+    visualizationType: 'Number',
+    dashboards: ['ai-performance'],
+    timeWindow: '7d',
+  },
 ];
 
 /**
