@@ -38,6 +38,13 @@ const VALID_ANALYTICS_EVENTS = [
   'VIEW_MODE_DURATION',
   'TOOLTIP_READING_DURATION',
   'CHAPTER_SCROLL_DEPTH',
+  // Explanation audio events (feat-explanation-audio)
+  'AUDIO_PLAYBACK_STARTED',
+  'AUDIO_PLAYBACK_PAUSED',
+  'AUDIO_PLAYBACK_COMPLETED',
+  'AUDIO_PLAYBACK_SEEK',
+  'AUDIO_SPEED_CHANGED',
+  'AUDIO_GENERATION_FAILED',
 ];
 
 // PostHog built-in events that are valid
