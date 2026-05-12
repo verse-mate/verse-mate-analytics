@@ -11,7 +11,7 @@
  */
 
 import { HttpResponse, http } from 'msw';
-import { server } from '../../../__tests__/mocks/server';
+import { server } from '../../__tests__/mocks/server';
 import { createPostHogApiClient } from '../api/client';
 import { CohortsApi } from '../api/cohorts';
 import { DashboardsApi } from '../api/dashboards';

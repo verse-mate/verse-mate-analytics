@@ -12,7 +12,7 @@
  */
 
 import { HttpResponse, http } from 'msw';
-import { server } from '../../../../__tests__/mocks/server';
+import { server } from '../../../__tests__/mocks/server';
 import type { PostHogConfig } from '../../config';
 import { createLogger } from '../../utils/logger';
 import { createPostHogApiClient, PostHogApiClient, PostHogApiClientError } from '../client';
