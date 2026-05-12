@@ -53,7 +53,7 @@ describe('PostHog Setup Script', () => {
 
     it('should load all insight definitions with required fields', () => {
       expect(INSIGHT_DEFINITIONS).toBeDefined();
-      expect(INSIGHT_DEFINITIONS.length).toBe(41);
+      expect(INSIGHT_DEFINITIONS.length).toBe(50);
 
       // Validate each insight has required fields
       for (const insight of INSIGHT_DEFINITIONS) {
@@ -68,7 +68,7 @@ describe('PostHog Setup Script', () => {
 
     it('should load all funnel definitions with required fields', () => {
       expect(FUNNEL_DEFINITIONS).toBeDefined();
-      expect(FUNNEL_DEFINITIONS.length).toBe(6);
+      expect(FUNNEL_DEFINITIONS.length).toBe(7);
 
       // Validate each funnel has required fields
       for (const funnel of FUNNEL_DEFINITIONS) {
@@ -84,7 +84,7 @@ describe('PostHog Setup Script', () => {
 
     it('should load all dashboard definitions with required fields', () => {
       expect(DASHBOARD_DEFINITIONS).toBeDefined();
-      expect(DASHBOARD_DEFINITIONS.length).toBe(6);
+      expect(DASHBOARD_DEFINITIONS.length).toBe(7);
 
       // Validate each dashboard has required fields
       for (const dashboard of DASHBOARD_DEFINITIONS) {
@@ -102,6 +102,7 @@ describe('PostHog Setup Script', () => {
       expect(dashboardNames).toContain('Product - AI Feature Performance');
       expect(dashboardNames).toContain('Engineering - Technical Health');
       expect(dashboardNames).toContain('Marketing - Social & Virality');
+      expect(dashboardNames).toContain('Engineering - Error Monitoring');
     });
 
     it('should validate definitions and return errors for invalid data', () => {
@@ -127,7 +128,7 @@ describe('PostHog Setup Script', () => {
     it('should return all dashboards when no filter provided', () => {
       const filtered = filterDashboardDefinitions(DASHBOARD_DEFINITIONS, undefined);
 
-      expect(filtered).toHaveLength(6);
+      expect(filtered).toHaveLength(7);
     });
 
     it('should return empty array for non-existent dashboard filter', () => {
